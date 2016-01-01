@@ -94,7 +94,7 @@
                     <span ng-show="app.writer.state.progress == 0 && !app.writer.isBurning()">Burn!</span>
                     <span ng-show="app.writer.state.progress == 0 && app.writer.isBurning()">Starting...</span>
                     <span ng-show="app.writer.state.progress != 0 && app.writer.state.progress != 100"
-                      ng-bind="app.writer.state.progress + '%'"></span>
+                      ng-bind="app.writer.state.progress + '% ' + app.writer.state.speed + ' MB/s'"></span>
                 </hero-progress-button>
               </div>
             </div>
