@@ -58,7 +58,7 @@ app.controller('AppController', function($q, DriveScannerService, SelectionState
   this.restart = function() {
     console.debug('Restarting');
     this.selection.clear();
-    this.writer.setProgress(0);
+    this.writer.reset();
     this.scanner.start(2000);
   };
 
@@ -349,6 +349,18 @@ imageWriter.service('ImageWriterService', function($q, $timeout) {
       console.debug('Progress: ' + self.state.progress);
     });
 
+  };
+
+  /**
+   * @summary Reset progress state
+   * @function
+   * @public
+   *
+   * @example
+   * ImageWriterService.reset();
+   */
+  this.reset = function() {
+    self.setProgress(0);
   };
 
   /**
